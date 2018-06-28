@@ -1,0 +1,5 @@
+arrow>=0.12.1
+google-api-python-client>=1.7.3
+tenacity>=4.10.0
+requests>=2.18.4
+httplib2>=0.10.3
