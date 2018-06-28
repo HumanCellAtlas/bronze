@@ -1,0 +1,3 @@
+arrow>=0.12.1
+google-api-python-client>=1.7.3
+tenacity>=4.10.0
