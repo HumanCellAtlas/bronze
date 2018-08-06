@@ -1,0 +1,16 @@
+before_script:
+  - apt-get update -qy
+  - apt-get install -y python-dev python-pip
+  - pip3 install -r requirements.txt
+
+alarm1:
+  script:
+    - python3 01-alarm-dcp-ops.py
+  only:
+    - 01-alarm
+
+alarm2:
+  script:
+    - python3 02-alarm-dcp-demo-pm.py
+  only:
+    - 02-alarm
