@@ -15,13 +15,13 @@ class DCP_DEMO_PM_ALARM(DefaultAlarm.DefaultAlarm):
 
     @staticmethod
     def prepare_message(current_row, notify_group):
-        message = SlackAgent.SlackMessage(':wave: Hello @here! There is a DCP demo tomorrow *{date}*. The demo coordinator this week is {coordinator}. The *{team}* team is first.\n'.format(date=current_row[0], coordinator=notify_group.getSlackUserByName(current_row[1]).tagSlackName, team=current_row[2]))
+        message = SlackAgent.SlackMessage(':wave: Hello <!here>! There is a DCP demo tomorrow *{date}*. The demo coordinator this week is {coordinator}. The *{team}* team is first.\n'.format(date=current_row[0], coordinator=notify_group.getSlackUserByName(current_row[1]).tagSlackName, team=current_row[2]))
         message.extend_msg('\n', '*This message serves as a reminder to all PMs to update the demo agenda here:* https://goo.gl/VwCSo2 \n')
         message.extend_msg('\n', 'The demo coordinator is responsible for:')
         message.extend_msg('\n', '1. Making sure folks add to the agenda')
         message.extend_msg('\n', '2. Ensuring the agenda time boxes to 1 hour')
         message.extend_msg('\n', '3. Leading the demo meeting (order of teams, keeping it moving, asking for questions, sticking to time boxes)')
-        message.extend_msg('\n', '4. Sending a summary of the demo in the #dcp-meeting-digest channel\n')
+        message.extend_msg('\n', '4. Sending a summary of the demo in the <#CA5B9C2JH|dcp-meeting-digest>\n')
         message.extend_msg('\n', '* If you are not able to be demo coordinator, please find a replacement. The schedule is here:* https://goo.gl/VbXRTj \n')
         return message.msg
 
