@@ -1,0 +1,18 @@
+credentials/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache
+build/
+dist/
+eggs/
+.eggs/
+sdist/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Development Artifacts
+*.ipynb_checkpoints/
