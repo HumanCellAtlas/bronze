@@ -1,0 +1,30 @@
+name: dcp_pm_alarm
+description: | 
+    Alarm for the DCP PM meeting.
+spreadsheet_target_var: DCP_PM_MEETING_SHEET_TARGET
+slack_channel_target_var: DCP_PM_MEETING_SLACK_TARGET
+message: |
+    :wave: Hello <!channel>! There is a DCP PM meeting tomorrow *{date}* at:
+    11:00 EST/8:00 PT/15:00 GMT.
+
+    The meeting coordinator this week is {coordinator}, and the notetaker is *{notetaker}*.
+
+    *This message serves as a reminder to all PMs to update the HCA DCP PM Bi-Weekly Meeting Notes:*
+    <https://docs.google.com/document/d/1rEJKD4_JDSmJ6YnjO3rEhoizVDIknZD_47v8Majq0vE/edit#heading=h.837i67ec9xj0|DCP PM Meeting Notes>
+    
+    The PM meeting coordinator is responsible for:
+        1. Making sure folks add to the agenda
+        2. Ensuring the agenda time boxes to *1* hour
+        3. Making sure there is a note-taker
+        4. Leading the meeting (politely keeping participants to stick to time boxes)
+        5. Sending a summary of the demo in the <#CA5B9C2JH|dcp-meeting-digest>
+    
+    *If you are not able to be PM meeting coordinator or note taker, please find a replacement. The schedule is here:* 
+    <https://docs.google.com/spreadsheets/d/1hIb1DQUQ0XLyJKYuqf4zAmxyOfsrVDoKxiDChEWPwz8/edit#gid=706596703|DCP PM Meeting Rotation>
+    ---------------------------------------------------------------------------
+
+    Please also note: The DCP is a *collaboration* and this means that extra effort needs to be put in to be 
+    *open*, *thoughtful*, and *welcoming* even when we are frustrated:
+
+        Be hard on problems :pokemon-golem:, soft on people :pokemon-jigglypuff: !
+schedule: 30 8 * * 3

@@ -1,0 +1,43 @@
+name: dcp_ops_alarm
+description: | 
+    Alarm for the DCP operations, specifically the weekly release operations.
+spreadsheet_target_var: DCP_OPS_SHEET_TARGET
+slack_channel_target_var: DCP_OPS_SLACK_TARGET
+message: |
+    :alarm_clock: *DCP Release Reminder Week of: {date}*
+
+    _This message serves as a reminder to the engineers who are taking care of the DCP release for this week_
+
+    While the *DCP release coordinator* is responsible for *leading* the release process, the *release engineers* are responsible for:
+        1. Fill out the release notes here: <https://drive.google.com/drive/folders/16BU1y3n1SD7D5Q1NNk0YUgs4NG7ArWiu|DCP OPS Folder>
+        2. Promoting `staging` to `production` on Tuesday, if both builds are green.
+        3. Promoting `integration` to `staging` on Wednesday, if both builds are green.
+        4. Making sure all tests pass and all environments are in a stable status.
+        5. Sending a summary of the demo in the <#CA5B9C2JH|dcp-meeting-digest>
+    
+    *If you are not sure about the release process, ask the release coordinator for help and always check the docs here:*
+    <https://allspark.dev.data.humancellatlas.org/dcp-ops/docs/wikis/SOP:%20Releasing%20new%20Versions%20of%20DCP%20Software|DCP Release SOP>
+
+    *If you are not able to be release coordinator, please find a replacement in advance. The schedule is here:* 
+    <https://docs.google.com/spreadsheets/d/1hIb1DQUQ0XLyJKYuqf4zAmxyOfsrVDoKxiDChEWPwz8/edit#gid=0|DCP OPS Rotation>
+
+    ---------------------------------------------------------------------------
+    Please also note: The DCP is a *collaboration* and this means that extra effort needs to be put in to be 
+    *open*, *thoughtful*, and *welcoming* even when we are frustrated:
+
+        Be hard on problems :pokemon-golem:, soft on people :pokemon-jigglypuff: !
+
+    ---------------------------------------------------------------------------
+    :speaking_head_in_silhouette: *Heads up!* This week's release schedule:
+
+        - *DCP* release coordinator: {coordinator}
+        - *HCA Metadata* release engineer: {hca_metadata}
+        - *Ingest service* release engineer: {ingest}
+        - *Upload service* release engineer: {upload}
+        - *Data Store service* release engineer: {dss}
+        - *Data Processing pipelines and Execution service* release engineer: {analysis}
+        - *Data Portal - Azul service* release engineer: {azul}
+        - *Data Portal - Browser service* release engineer: {browser}
+        - *Query service* release engineer: {query_service}
+        - *DCP Auth service* release engineer: {dcp_auth_service}
+schedule: 30 8 * * 1,5
