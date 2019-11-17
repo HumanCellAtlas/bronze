@@ -1,8 +1,5 @@
 image: quay.io/humancellatlas/dcp-ops-bronze:latest
 
-before_script:
-  - null
-
 DCP_Demo:
   script:
     - cd alarms/DCP_Demo && python alarm.py && cd -
