@@ -72,11 +72,3 @@ class SpreadSheetAdmin(GoogleDocuments):
         )
         self.spreadsheet_url = spreadsheet_url
         self.spreadsheet_id = getSpreadSheetId(self.spreadsheet_url)
-
-
-if __name__ == '__main__':
-    # url = 'https://docs.google.com/spreadsheets/d/1fKynW_5o8A0DdLAm8cx8U6rAmxLprnPxzhMNGZSzMhA/edit#gid=0'
-    # ss1 = SpreadSheetReader('./credentials/sheets_reader_key.json', url)
-    # with open('credentials/xx.json', 'w') as fp:
-    #     json.dump(ss1.getSheet('Users').get('values'), fp)
-    pass

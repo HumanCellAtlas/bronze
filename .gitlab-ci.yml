@@ -1,0 +1,40 @@
+image: quay.io/humancellatlas/dcp-ops-bronze:latest
+
+before_script:
+  - null
+
+DCP_Demo:
+  script:
+    - cd alarms/DCP_Demo && python alarm.py && cd -
+  only:
+    refs:
+      - schedules
+    variables:
+      - $ALARM == "DCP_Demo"
+
+DCP_OPS:
+  script:
+    - cd alarms/DCP_OPS && python alarm.py && cd -
+  only:
+    refs:
+      - schedules
+    variables:
+      - $ALARM == "DCP_OPS"
+
+DCP_PM:
+  script:
+    - cd alarms/DCP_PM && python alarm.py && cd -
+  only:
+    refs:
+      - schedules
+    variables:
+      - $ALARM == "DCP_PM"
+
+DCP_Tech_Arch:
+  script:
+    - cd alarms/DCP_Tech_Arch && python alarm.py && cd -
+  only:
+    refs:
+      - schedules
+    variables:
+      - $ALARM == "DCP_Tech_Arch"

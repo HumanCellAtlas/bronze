@@ -9,6 +9,8 @@ We build `bronze` in this repo as:
 - A library that talks to Slack API, Google Docs/Sheets API in a high-level and friendly way.
 - A deployable and automated alarm service that sends reminders to Slack based on interpretable data files and Google Docs.
 
+_Note: we started this project primaryly for HCA DCP deployment and notification automation purposes._
+
 ## Development
 ![Github](https://img.shields.io/badge/python-3.6+-green.svg?style=flat-square&logo=python&colorB=blue)
 ![GitHub](https://img.shields.io/github/license/HumanCellAtlas/bronze.svg?style=flat-square&colorB=blue)

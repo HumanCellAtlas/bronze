@@ -1,13 +1,13 @@
 name: dcp_demo_alarm
 description: | 
     Alarm for the DCP Demos.
-spreadsheet_target_var: DCP_DEMO_SHEET_TARGET
+spreadsheet_target_var: DCP_ROTATION_SHEET_TARGET
+credentials_target_var: BRONZE_CREDENTIALS
 slack_channel_target_var: DCP_DEMO_SLACK_TARGET
 message: |
-    :wave: Hello <!channel>! There is a DCP demo tomorrow *{date}* at:
-    11:00 EST/8:00 PT/15:00 GMT. 
+    :wave: Hello <!channel>! There is a DCP demo tomorrow *{date}* at: 11:00 EST/8:00 PT/15:00 GMT. 
     
-    The demo coordinator this week is {coordinator}. The *{team}* team goes first.
+    The demo coordinator for this time is *{coordinator}*.
 
     *This message serves as a reminder to demo coordinator and participants to update the demo agenda here:*
     https://goo.gl/VwCSo2
@@ -27,5 +27,5 @@ message: |
     Please also note: The DCP is a *collaboration* and this means that extra effort needs to be put in to be 
     *open*, *thoughtful*, and *welcoming* even when we are frustrated:
 
-        Be hard on problems :pokemon-golem:, soft on people :pokemon-jigglypuff: !
+    *-->* Be hard on problems :pokemon-golem:, soft on people :pokemon-jigglypuff: !
 schedule: 30 8 * * 1

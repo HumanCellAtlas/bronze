@@ -2,6 +2,7 @@ name: dcp_tech_arch_alarm
 description: | 
     Alarm for the DCP Tech Arch meeting.
 spreadsheet_target_var: false
+credentials_target_var: false
 slack_channel_target_var: DCP_TECH_ARCHITECTURE_MEETING_SLACK_TARGET
 message: |
     :wave: Hello <!channel>! There is a DCP Tech Architecture meeting tomorrow at:
@@ -22,5 +23,5 @@ message: |
     Please also note: The DCP is a *collaboration* and this means that extra effort needs to be put in to be 
     *open*, *thoughtful*, and *welcoming* even when we are frustrated:
 
-        Be hard on problems :pokemon-golem:, soft on people :pokemon-jigglypuff: !
+    *-->* Be hard on problems :pokemon-golem:, soft on people :pokemon-jigglypuff: !
 schedule: 0 11 * * 4

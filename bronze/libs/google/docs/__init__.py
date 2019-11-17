@@ -2,6 +2,8 @@ from enum import Enum
 from google.oauth2 import service_account
 from googleapiclient import discovery
 from typing import Union, List
+from pathlib import Path
+from bronze.libs import cryptor
 
 
 class GoogleSheetsScopes(Enum):
@@ -39,10 +41,21 @@ class GoogleDocuments:
         creds = None
         if not creds or not creds.valid:
             if isinstance(service_account_key, str):
-                creds = service_account.Credentials.from_service_account_file(
-                    service_account_key, scopes=scopes
-                )
-            elif isinstance(service_account_key, dict):
+                try:
+                    if Path(service_account_key).is_file():
+                        creds = service_account.Credentials.from_service_account_file(
+                            service_account_key, scopes=scopes
+                        )
+                    else:
+                        service_account_key = cryptor.decrypt_from_environment_variable_with_base64(
+                            base64string=service_account_key
+                        )
+                # Sometimes the base64 string is too long to be detected by the pathlib
+                except OSError:
+                    service_account_key = cryptor.decrypt_from_environment_variable_with_base64(
+                        base64string=service_account_key
+                    )
+            if isinstance(service_account_key, dict):
                 creds = service_account.Credentials.from_service_account_info(
                     service_account_key, scopes=scopes
                 )

@@ -1,8 +1,8 @@
 class User:
-    """TODO: switch to slack official api client: https://github.com/slackapi/python-slackclient"""
+    """TODO: potentially switch to slack official api client: https://github.com/slackapi/python-slackclient"""
 
-    def __init__(self, slack_name, slack_id, **kwargs):
-        self.slack_name, self.slack_id = slack_name, slack_id
+    def __init__(self, slack_id: str, slack_name: str = None, **kwargs):
+        self.slack_id, self.slack_name = slack_id, slack_name
         for k, v in kwargs.items():
             setattr(self, k, v)
 
@@ -17,7 +17,7 @@ class User:
         return f"<@{self.slack_id}>"
 
     def __str__(self):
-        return f"{self.slack_id} {self.slack_name}"
+        return f"{self.slack_id}"
 
     def __repr__(self):
         return self.__str__()
@@ -30,9 +30,3 @@ class User:
 
     def __json__(self):
         return {'slack_name': self.slack_name, 'slack_id': self.slack_id}
-
-
-if __name__ == '__main__':
-    # a = User('test', '123')
-    # print(a, a.tag)
-    pass
