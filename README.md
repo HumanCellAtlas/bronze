@@ -1,6 +1,6 @@
 # bronze
 
-[![logo](./assets/logo.png?raw=true =250x250)](https://postimg.cc/image/fq2m11jcd/)
+[![logo](./assets/logo.png =250x250)](https://postimg.cc/image/fq2m11jcd/)
 
 > _people used to make bronze [ancient bells](https://en.wikipedia.org/wiki/Bianzhong) as instruments and alarms in the early days._
 
