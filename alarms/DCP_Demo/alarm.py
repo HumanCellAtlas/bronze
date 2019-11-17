@@ -1,6 +1,7 @@
 from bronze.libs.google.docs import spreadsheet as ss
 from bronze.libs import alarm as bronze_alarm
 import pendulum
+import sys
 
 
 # Create and initialize the alarm from the YAML file
@@ -29,7 +30,15 @@ target_dates_df = spreadsheet.sheetToDataFrame(
 target = target_dates_df.loc[target_dates_df['Date'] == invocation_date_str]
 
 # Extract and validate the date and coordinator for composing the messages
-date = bronze_alarm.load_cell_from_row(column_name='Date', row=target)
+try:
+    date = bronze_alarm.load_cell_from_row(column_name='Date', row=target)
+except ValueError:
+    # No entry found, mostly means there's no demo, early termination!
+    # TODO: make this logic less error-prone
+    msg = "There's no demo tomorrow :pokemon-snorlax:"
+    demo_alarm.send_msg(msg=msg)
+    sys.exit(0)
+
 coordinator = bronze_alarm.load_cell_from_row(column_name='Coordinator', row=target)
 
 # Make sure issues with the Name -> SlackID mapping won't mess up the whole alarm
