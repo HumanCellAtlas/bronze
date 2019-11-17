@@ -1,8 +1,8 @@
 # bronze
 
-[![logo](./assets/logo.png =250x250)](https://postimg.cc/image/fq2m11jcd/)
+<a href="https://www.needpix.com/photo/826289/in-ancient-china-bronze"><img src="./assets/logo.png" width="30%"></a>
 
-> _people used to make bronze [ancient bells](https://en.wikipedia.org/wiki/Bianzhong) as instruments and alarms in the early days._
+> _people used to make stable and durable bronze [ancient bells](https://en.wikipedia.org/wiki/Bianzhong) as instruments and alarms in the early days._
 
 We build `bronze` in this repo as:
 
