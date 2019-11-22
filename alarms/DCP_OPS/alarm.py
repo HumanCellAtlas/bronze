@@ -4,11 +4,11 @@ import pendulum
 
 
 # Create and initialize the alarm from the YAML file
-demo_alarm = bronze_alarm.Alarm(alarm='alarm.yml')
+ops_alarm = bronze_alarm.Alarm(alarm='alarm.yml')
 
 # Load the spreadsheet
-spreadsheet_url = demo_alarm.sheet_target
-spreadsheet = ss.SpreadSheetReader(demo_alarm.creds_target, spreadsheet_url)
+spreadsheet_url = ops_alarm.sheet_target
+spreadsheet = ss.SpreadSheetReader(ops_alarm.creds_target, spreadsheet_url)
 
 # Construct the name -> SlackID mapping
 slack_user_mapping = bronze_alarm.get_slack_mapping(
@@ -64,8 +64,8 @@ for service in SERVICES:
 if len(set(list(rotation.values()))) == 1 and list(rotation.values())[0] == "skip":
     msg = "There's no DCP demo for the week :pokemon-snorlax:"
 else:
-    msg = demo_alarm.message
+    msg = ops_alarm.message
     msg = msg.format(**rotation)
 
 # Send out the message
-demo_alarm.send_msg(msg=msg)
+ops_alarm.send_msg(msg=msg)

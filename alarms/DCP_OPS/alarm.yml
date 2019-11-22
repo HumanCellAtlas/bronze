@@ -14,7 +14,6 @@ message: |
         2. Promoting `staging` to `production` on Tuesday, if both builds are green.
         3. Promoting `integration` to `staging` on Wednesday, if both builds are green.
         4. Making sure all tests pass and all environments are in a stable status.
-        5. Sending a summary of the demo in the <#CA5B9C2JH|dcp-meeting-digest>
     
     *If you are not sure about the release process, ask the release coordinator for help and always check the docs here:*
     <https://allspark.dev.data.humancellatlas.org/dcp-ops/docs/wikis/SOP:%20Releasing%20new%20Versions%20of%20DCP%20Software|DCP Release SOP>

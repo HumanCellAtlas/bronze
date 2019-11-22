@@ -4,11 +4,11 @@ import pendulum
 
 
 # Create and initialize the alarm from the YAML file
-demo_alarm = bronze_alarm.Alarm(alarm='alarm.yml')
+pm_alarm = bronze_alarm.Alarm(alarm='alarm.yml')
 
 # Load the spreadsheet
-spreadsheet_url = demo_alarm.sheet_target
-spreadsheet = ss.SpreadSheetReader(demo_alarm.creds_target, spreadsheet_url)
+spreadsheet_url = pm_alarm.sheet_target
+spreadsheet = ss.SpreadSheetReader(pm_alarm.creds_target, spreadsheet_url)
 
 # Construct the name -> SlackID mapping
 slack_user_mapping = bronze_alarm.get_slack_mapping(
@@ -56,7 +56,7 @@ except KeyError:
 if coordinator_slack_id == "skip" or notetaker_slack_id == "skip":
     msg = "There's no PM meeting tomorrow :pokemon-snorlax:"
 else:
-    msg = demo_alarm.message
+    msg = pm_alarm.message
     msg = msg.format(
         **{
             "date": date,
@@ -66,4 +66,4 @@ else:
     )
 
 # Send out the message
-demo_alarm.send_msg(msg=msg)
+pm_alarm.send_msg(msg=msg)
