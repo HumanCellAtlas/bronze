@@ -18,12 +18,14 @@ slack_user_mapping = bronze_alarm.get_slack_mapping(
 
 # Get the date of "today", which is the date of the script invocation time
 invocation_date = pendulum.today(tz="UTC")
+print(f"The current invocation date is {invocation_date}")
 
 # Look for tomorrow
 invocation_date = invocation_date.add(days=1)
 invocation_date_str = invocation_date.format("MMM D, YYYY")
 
 # Figure out which target date in the rotation the invocation day matches
+print(f"Looking for exact matches of {invocation_date_str} in the rotation sheet...")
 target_dates_df = spreadsheet.sheetToDataFrame(
     sheet_name='dcp-demo', sheet_range='A1:B1000', has_header=True
 )
