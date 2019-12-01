@@ -1,7 +1,8 @@
 import re
 import pandas as pd
 from typing import Union, List
-from bronze.libs.google.docs import GoogleDocuments, GoogleSheetsScopes, APIVersions
+from bronze.libs.google.docs import GoogleSheetsScopes
+from bronze.libs.google import APIVersions, GoogleBase
 
 
 def getSpreadSheetId(spreadsheet_url: str):
@@ -11,16 +12,18 @@ def getSpreadSheetId(spreadsheet_url: str):
         raise ValueError(f'Invalid spreadsheet URL {spreadsheet_url}!')
 
 
-class SpreadSheetReader(GoogleDocuments):
+class SpreadSheetReader(GoogleBase):
     """Read spreadsheets through Google Sheets API."""
 
     SCOPES = GoogleSheetsScopes.readonly.value
+    SHEETS_API = APIVersions.sheets.name
     SHEETS_API_VERSION = APIVersions.sheets.value
 
     def __init__(self, service_account_key: Union[str, dict], spreadsheet_url: str):
         super().__init__(
             service_account_key=service_account_key,
             scopes=self.SCOPES,
+            api=self.SHEETS_API,
             api_version=self.SHEETS_API_VERSION,
         )
         self.spreadsheet_url = spreadsheet_url
@@ -58,16 +61,18 @@ class SpreadSheetReader(GoogleDocuments):
             return data_frame.values.tolist()
 
 
-class SpreadSheetAdmin(GoogleDocuments):
+class SpreadSheetAdmin(GoogleBase):
     """Read, edit, create and delete spreadsheets through Google Sheets API."""
 
     SCOPES = GoogleSheetsScopes.full_access.value
+    SHEETS_API = APIVersions.sheets.name
     SHEETS_API_VERSION = APIVersions.sheets.value
 
     def __init__(self, service_account_key: Union[str, dict], spreadsheet_url: str):
         super().__init__(
             service_account_key=service_account_key,
             scopes=self.SCOPES,
+            api=self.SHEETS_API,
             api_version=self.SHEETS_API_VERSION,
         )
         self.spreadsheet_url = spreadsheet_url
