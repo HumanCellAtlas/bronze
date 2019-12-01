@@ -19,7 +19,7 @@ invocation_date = pendulum.today(tz="UTC")
 
 # Look for tomorrow
 invocation_date = invocation_date.add(days=1)
-invocation_date_str = invocation_date.format("MMM DD, YYYY")
+invocation_date_str = invocation_date.format("MMM D, YYYY")
 
 # Figure out which target date in the rotation the invocation day matches
 target_dates_df = spreadsheet.sheetToDataFrame(
