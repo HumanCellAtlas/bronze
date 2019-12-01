@@ -4,6 +4,7 @@ description: |
 spreadsheet_target_var: DCP_ROTATION_SHEET_TARGET
 credentials_target_var: BRONZE_CREDENTIALS
 slack_channel_target_var: DCP_OPS_SLACK_TARGET
+document_template_target_var: DCP_OPS_RELEASE_NOTES_TARGET
 message: |
     :alarm_clock: *DCP Release Reminder Week of: {date}*
 
