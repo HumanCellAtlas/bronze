@@ -122,5 +122,5 @@ staging_release_note_id = bronze_utils.create_doc_from_template(
 
 follow_up_msg = f"""Also, please fill out the following release notes *before* the release:
     - *Production* Notes: {GOOGLE_DOC_URL.format(document_id=prod_release_note_id)}
-    - 8Staging* Notes: {GOOGLE_DOC_URL.format(document_id=staging_release_note_id)}"""
+    - *Staging* Notes: {GOOGLE_DOC_URL.format(document_id=staging_release_note_id)}"""
 ops_alarm.send_msg(msg=follow_up_msg)
