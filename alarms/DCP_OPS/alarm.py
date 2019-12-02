@@ -3,7 +3,7 @@ from bronze.libs import alarm as bronze_alarm
 import pendulum
 import sys
 import os
-from bronze import utils as bronze_utils
+from bronze.utils import create_doc_from_template
 
 
 # Create and initialize the alarm from the YAML file
@@ -97,7 +97,7 @@ prod_date = pendulum.today().add(days=1).strftime("%Y/%m/%d")
 release_destination = 'Production'
 print(f'Will create release notes for {prod_date} for {release_destination} promotion.')
 
-prod_release_note_id = bronze_utils.create_doc_from_template(
+prod_release_note_id = create_doc_from_template(
     template_url=RELEASE_NOTES_TEMPLATE_URL,
     service_account_key=ops_alarm.creds_target,
     copy_title=f"{prod_date} {release_destination} Release Notes",
@@ -112,7 +112,7 @@ print(
     f'Will create release notes for {staging_date} for {release_destination} promotion.'
 )
 
-staging_release_note_id = bronze_utils.create_doc_from_template(
+staging_release_note_id = create_doc_from_template(
     template_url=RELEASE_NOTES_TEMPLATE_URL,
     service_account_key=ops_alarm.creds_target,
     copy_title=f"{staging_date} {release_destination} Release Notes",
